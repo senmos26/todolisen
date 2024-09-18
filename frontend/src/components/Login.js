@@ -11,7 +11,7 @@ export default function Login({ setIsAuthenticated }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.BACK}/auth/login`, 
+      const response = await axios.post(`${process.env.REACT_APP_BACK}/auth/login`, 
         { email, password }, 
         { withCredentials: true }
       );

@@ -25,7 +25,7 @@ export default function EditTask() {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`${process.env.BACK}/tasks/${id}`, task, {
+      await axios.put(`${process.env.REACT_APP_BACK}/tasks/${id}`, task, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
@@ -43,7 +43,7 @@ export default function EditTask() {
     const fetchTask = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`${process.env.BACK}/tasks/${id}`, {
+        const response = await axios.get(`${process.env.REACT_APP_BACK}/tasks/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },

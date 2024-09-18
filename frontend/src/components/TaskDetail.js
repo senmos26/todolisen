@@ -14,7 +14,7 @@ export default function TaskDetail() {
   const onDelete = async (taskId) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`${process.env.BACK}/tasks/${taskId}`, {
+      await axios.delete(`${process.env.REACT_APP_BACK}/tasks/${taskId}`, {
         headers: {
           'Authorization': `Bearer ${token}` // Inclure le token dans les en-têtes
         },

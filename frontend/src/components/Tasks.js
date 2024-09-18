@@ -12,7 +12,7 @@ export default function Tasks() {
 
     // Envoyer une requête GET avec le token d'authentification
     axios
-      .get("https://todolisen-tlot.vercel.app/tasks", {
+      .get(`${process.env.REACT_APP_BACK}/tasks`, {
         headers: {
           'Authorization': `Bearer ${token}`  // Utiliser le token JWT pour l'authentification
         },

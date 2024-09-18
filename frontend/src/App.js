@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await axios.get(`${process.env.BACK}/auth/check`, { withCredentials: true });
+        const response = await axios.get(`${process.env.REACT_APP_BACK}/auth/check`, { withCredentials: true });
         setIsAuthenticated(response.data.isAuthenticated);
       } catch (error) {
         setIsAuthenticated(false);
@@ -27,7 +27,7 @@ function App() {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post(`${process.env.BACK}/auth/logout`, {}, { withCredentials: true });
+      const response = await axios.post(`${process.env.REACT_APP_BACK}/auth/logout`, {}, { withCredentials: true });
       if (response.status === 200) {
         localStorage.removeItem('user'); // Supprimer les informations de l'utilisateur du localStorage
         setIsAuthenticated(false);
